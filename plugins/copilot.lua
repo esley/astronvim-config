@@ -7,7 +7,11 @@ return {
     cmd = "Copilot",
     event = "InsertEnter",
     config = function()
-      require("copilot").setup({
+      require("copilot").setup {
+        filetypes = {
+          -- temporary disable for elixir files
+          elixir = false,
+        },
         panel = {
           auto_refresh = false,
           keymap = {
@@ -21,13 +25,13 @@ return {
         suggestion = {
           auto_trigger = true,
           keymap = {
-            accept = "<M-l>",
+            accept = "<C-l>",
             prev = "<M-[>",
-            next = "<M-]>",
+            next = "<C-]>",
             dismiss = "<C-]>",
           },
         },
-      })
+      }
     end,
-  }
+  },
 }
